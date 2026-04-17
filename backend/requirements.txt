@@ -1,0 +1,13 @@
+fastapi==0.115.0
+uvicorn==0.30.6
+Pillow==10.4.0
+python-dotenv>=1.0.0
+ultralytics>=8.3.0
+transformers>=4.46.0
+peft>=0.13.0
+bitsandbytes>=0.44.0
+qwen-vl-utils>=0.0.8
+accelerate>=1.0.0
+grad-cam>=1.5.0
+opencv-python>=4.9.0
+numpy>=1.26.0

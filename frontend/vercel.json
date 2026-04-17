@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "src/app/api/backend/[...path]/route.ts": {
+      "maxDuration": 300
+    }
+  }
+}

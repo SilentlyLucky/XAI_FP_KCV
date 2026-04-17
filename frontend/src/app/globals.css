@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --primary: #004B8D;
+  --on-primary: #ffffff;
+  --primary-container: #D1E4FF;
+  --on-primary-container: #001D36;
+  --secondary: #516072;
+  --on-secondary: #ffffff;
+  --secondary-container: #D5E4F7;
+  --on-secondary-container: #0E1D2A;
+  --tertiary: #695777;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #F0DBFF;
+  --error: #BA1A1A;
+  --on-error: #ffffff;
+  --error-container: #FFDAD6;
+  --on-error-container: #410002;
+  --background: #F8FAFD;
+  --on-background: #1A1C1E;
+  --surface: #F8FAFD;
+  --on-surface: #1A1C1E;
+  --surface-variant: #DFE2EB;
+  --on-surface-variant: #43474E;
+  --outline: #73777F;
+  --surface-container-lowest: #FFFFFF;
+  --surface-container-low: #F2F3F7;
+  --surface-container: #ECEEF3;
+  --surface-container-high: #E6E8EE;
+  --surface-container-highest: #E0E3E8;
+
+  --tp-color: #4CAF50;
+  --fp-color: #EF5350;
+  --fn-color: #FFB74D;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-error: var(--error);
+  --color-on-error: var(--on-error);
+  --color-error-container: var(--error-container);
+  --color-on-error-container: var(--on-error-container);
+  --color-background: var(--background);
+  --color-on-background: var(--on-background);
+  --color-surface: var(--surface);
+  --color-on-surface: var(--on-surface);
+  --color-surface-variant: var(--surface-variant);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-outline: var(--outline);
+  --color-surface-lowest: var(--surface-container-lowest);
+  --color-surface-low: var(--surface-container-low);
+  --color-surface-ctr: var(--surface-container);
+  --color-surface-high: var(--surface-container-high);
+  --color-surface-highest: var(--surface-container-highest);
+  --color-tp: var(--tp-color);
+  --color-fp: var(--fp-color);
+  --color-fn: var(--fn-color);
+
+  --font-headline: 'Manrope', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-label: 'Inter', sans-serif;
+
+  --animate-infinite-scroll: infinite-scroll 30s linear infinite;
+  --animate-shimmer: shimmer 2s infinite;
+  --animate-gradient-flow: gradient-flow 3s linear infinite;
+  --animate-pulse-glow: pulse-glow 1.5s ease-in-out infinite;
+
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes gradient-flow {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    100% {
+      background-position: -200% 50%;
+    }
+  }
+
+  @keyframes pulse-glow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 75, 141, 0.3);
+    }
+
+    50% {
+      box-shadow: 0 0 0 8px rgba(0, 75, 141, 0);
+    }
+  }
+}
+
+@utility bg-flow {
+  background-size: 200% auto;
+}
+
+body {
+  background: var(--background);
+  color: var(--on-surface);
+  font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Manrope', sans-serif;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.bg-mesh {
+  background-image: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f0f9ff 100%);
+  background-attachment: fixed;
+}
+
+.floating-blob {
+  position: absolute;
+  filter: blur(80px);
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.pause-on-hover:hover {
+  animation-play-state: paused !important;
+}
+
+.spectrum-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s;
+  border: 2px solid transparent;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px);
+}
+
+.metric-row .shimmer-layer {
+  display: none;
+}
+
+.metric-row:hover .shimmer-layer {
+  display: block;
+  animation: shimmer 2s infinite;
+}
+
+.has-tooltip {
+  position: relative;
+  display: inline-flex;
+}
+
+.tooltip {
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.has-tooltip:hover .tooltip {
+  visibility: visible;
+}
