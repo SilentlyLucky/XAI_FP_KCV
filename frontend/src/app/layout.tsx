@@ -4,9 +4,6 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "VISIONGUARD",
   description: "VISIONGUARD: Mengungkap Kegagalan Persepsi Model Deteksi pada Kendaraan Otonom dengan Explainable AI",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
