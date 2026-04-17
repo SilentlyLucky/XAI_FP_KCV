@@ -44,14 +44,11 @@ The system integrates:
 ## ✨ How It Works
 
 ```
-┌─────────────┐     ┌──────────────┐     ┌─────────────────┐     ┌────────────────┐
-│  User sends │────▶│  YOLOv11s    │────▶│  EigenCAM       │────▶│  Qwen2-VL-2B   │
-│  an image   │     │  Detection   │     │  Heatmap        │     │  VLM Diagnosis │
-└─────────────┘     └──────────────┘     └─────────────────┘     └────────────────┘
-                          │                      │                        │
-                    Bounding boxes          Saliency map           Structured text
-                    Labels & scores         (per-region             (streamed live
-                    TP / FP / FN            attention)               token by token)
+┌─────────────┐      ┌──────────────┐     ┌─────────────────┐      ┌────────────────┐
+│     RGB     │────▶│  YOLOv11s    │────▶│  EigenCAM       │────▶│  Qwen2-VL-2B   │
+│    Image    │      │  Detection   │     │  Heatmap        │      │  VLM Diagnosis │
+└─────────────┘      └──────────────┘     └─────────────────┘      └────────────────┘
+
 ```
 
 1. **Image Selection** — user selects or the system auto-picks a test image from the dataset
