@@ -16,6 +16,7 @@ export interface XAIMetrics {
 export interface DetectedObject {
   object_class: string;
   object_type: "TP" | "FP" | "FN";
+  gt_class?: string;
   risk_tier: "LOW" | "MODERATE" | "HIGH" | "CRITICAL";
   bbox: [number, number, number, number];
   confidence: number | null;
