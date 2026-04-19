@@ -164,7 +164,7 @@ export default function ImageViewer({
           obj.object_type === "TP"
             ? `${obj.object_class} ${obj.confidence?.toFixed(2) ?? ""}`
             : obj.object_type === "FP"
-              ? `FP: ${obj.object_class} ${obj.confidence ? obj.confidence.toFixed(2) : ""} (GT: none)`
+              ? `FP: ${obj.object_class} ${obj.confidence ? obj.confidence.toFixed(2) : ""} (GT: ${obj.gt_class || 'none'})`
               : `FN: ${obj.object_class} (Missed)`;
 
         ctx.font = "bold 9px Inter, sans-serif";
